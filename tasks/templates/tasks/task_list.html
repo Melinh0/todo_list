@@ -1,0 +1,16 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+<h1 class="page-title" style="text-align: center;">Task List</h1>
+<ul>
+    {% for task in tasks %}
+    <li>{{ task.title }} - {{ task.created_at }} - <a href="{% url 'task_update' task.pk %}" class="button">Update</a> - <a href="{% url 'task_delete' task.pk %}" class="button">Delete</a></li>
+    {% endfor %}
+</ul>
+<div style="text-align: center;">
+    <a href="{% url 'task_create' %}" class="button">Create Task</a>
+</div>   
+<div style="text-align: center;">
+    <a href="{% url 'task_charts' %}" class="button">Ver Gráficos</a>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+<h1 class="page-title" style="text-align: center;">Task Data</h1>
+
+<div>
+    <p><strong>Number of Tasks:</strong> {{ task_count }}</p>
+    <p><strong>Number of Completed Tasks:</strong> {{ completed_task_count }}</p>
+    <p><strong>Average Task Time:</strong> {{ avg_time }} hours</p>
+</div>
+
+<div style="text-align: center;">
+    <img src="data:image/png;base64,{{ graphic }}" alt="Task Data Chart">
+</div>
+
+{% endblock %}
